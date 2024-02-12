@@ -36,10 +36,6 @@ You can customize the following parameters in the `mondrian_art.py` script:
 
 Adjusting these parameters can result in different styles and compositions of the generated artwork.
 
-## Example
-
-![Mondrian Art Example](mondrian_art_example.png)
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
