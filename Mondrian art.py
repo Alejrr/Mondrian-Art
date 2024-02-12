@@ -1,5 +1,3 @@
-#  Draw random "art" in a Mondrian style
-#
 import tkinter as tk
 import random
 
@@ -15,7 +13,7 @@ def randomColor():
     
 
 def split_both(x, y, w, h, canvas):
-    if w < SPLIT_LOW and h <SPLIT_LOW:
+    if w < SPLIT_LOW and h < SPLIT_LOW:
         return
     elif w < SPLIT_LOW:
         split_vertical(x,y,w,h,canvas)
@@ -28,6 +26,8 @@ def split_both(x, y, w, h, canvas):
             split_vertical(x,y,w,h,canvas)
 
 def split_horizontal(x, y, w, h, canvas):
+    if h == 0:
+        return
     split_point = int(w/SPLIT_PENALTY)
     canvas.create_rectangle(x,y,x+w,y+h, fill = randomColor())
     split_both(x,y,split_point,h,canvas)
@@ -35,6 +35,8 @@ def split_horizontal(x, y, w, h, canvas):
 
 
 def split_vertical(x, y, w, h, canvas):
+    if w == 0:
+        return
     split_point = int(h / SPLIT_PENALTY)
     canvas.create_rectangle(x, y, x + w, y + h, fill=randomColor())
     split_both(x, y, w, split_point, canvas)
